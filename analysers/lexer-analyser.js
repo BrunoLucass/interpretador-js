@@ -35,7 +35,7 @@ const detectTokens = code => {
         });
     }
 
-    return foundTokens.filter(i => i.type !== 'whitespace');
+    return foundTokens.filter(i => i.type !== 'whitespace' && i.type !== 'comment');
 };
 
 module.exports = code => detectTokens(code);

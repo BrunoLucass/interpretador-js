@@ -190,7 +190,17 @@ const readWhitespace = reader => {
     return null;
 }
 
+const readComment = reader => {
+    if (reader.peek(2) == '//') {
+        reader.next(2);
+        while (reader.hasNext() && !reader.peek().match('\n')) {
+            reader.next();
+        }
+        return { type: 'comment', value: '' };
+    }    
+}
 module.exports = [
+    readComment,
     readNumberToken,
     readString,
     readOperator,

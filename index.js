@@ -3,7 +3,8 @@ const parseTokens = require('./analysers/parser-analyser');
 const interpret = require('./analysers/interpreter');
 
 const code = `
-let firstName = "John";
+let firstName = "John"; // let a = 4
+// testando comentarios
 `;
 
 const tokens = analyseCode(code);
