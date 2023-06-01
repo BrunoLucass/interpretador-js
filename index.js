@@ -1,9 +1,9 @@
-const analyseCode = require('./lexer-analyser');
-const parseTokens = require('./parser-analyser');
-const interpret = require('./interpreter');
+const analyseCode = require('./analysers/lexer-analyser');
+const parseTokens = require('./analysers/parser-analyser');
+const interpret = require('./analysers/interpreter');
 
 const code = `
-let firstName = 'John';
+let firstName = "John";
 `;
 
 const tokens = analyseCode(code);

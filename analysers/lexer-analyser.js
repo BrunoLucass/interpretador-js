@@ -1,6 +1,6 @@
-const CharacterReader = require('./readers/character-reader');
+const CharacterReader = require('../readers/character-reader');
 
-const tokenDetectors = require('./tokens');
+const tokenDetectors = require('../tokens');
 
 const detectTokens = code => {
     const reader = new CharacterReader(code);

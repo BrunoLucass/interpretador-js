@@ -24,7 +24,7 @@ const readString = reader => {
     let isEscaping = false;
 
     while (reader.hasNext()) {
-        const matchFound = reader.peek() == "'";
+        const matchFound = (reader.peek() == "'" || reader.peek() == '"');
 
         if (!startedReading && !matchFound) {
             break;
@@ -176,7 +176,7 @@ const readComma = reader => {
 }
 
 const readWhitespace = reader => {
-    const whitespaceRegex = /[\t\r\n ]/; // Regex for detecting whitespace.
+    const whitespaceRegex = /[\t\r\n ]/;
     let value = '';
     while (reader.hasNext() && reader.peek().match(whitespaceRegex)) {
         value += reader.peek();
