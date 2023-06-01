@@ -1,5 +1,5 @@
 const parseGrammar = require('./grammar');
-const TokenReader = require('./token-reader');
+const TokenReader = require('./readers/token-reader');
 
 const parseTokens = tokens => {
     const reader = new TokenReader(tokens);

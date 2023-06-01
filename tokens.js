@@ -114,7 +114,18 @@ const readKeyword = reader => {
         reader.next(2);
         return { type: 'keyword', value: 'if' };
     }
-
+    if (reader.peek(3).match(/^var$/i)) {
+        reader.next(3);
+        return { type: 'keyword', value: 'var' };
+    }
+    if (reader.peek(3).match(/^let$/i)) {
+        reader.next(3);
+        return { type: 'keyword', value: 'let' };
+    }
+    if (reader.peek(5).match(/^const$/i)) {
+        reader.next(5);
+        return { type: 'keyword', value: 'const' };
+    }
     return null;
 }
 

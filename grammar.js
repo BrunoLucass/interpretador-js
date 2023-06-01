@@ -35,8 +35,8 @@ const FunctionParameters = rule(
 );
 
 const AssignmentStatement = rule(
-    () => exactly(Name, Equals, Expression, Eol),
-    ([name,, expression]) => ({ type: 'assignment', name: name.value, expression })
+    () => exactly(either(VarKeyword, LetKeyword, ConstKeyword), Name, Equals, Expression, Eol),
+    ([,name,, expression]) => ({ type: 'assignment', name: name.value, expression })
 );
 
 const processBinaryResult = ([left, right]) => {
@@ -134,6 +134,9 @@ const BEnd = token('codeBlockEnd');
 const Comma = token('comma');
 const Eol = token('endOfLine');
 const IfKeyword = token('keyword', 'if');
+const VarKeyword = token('keyword', 'var');
+const LetKeyword = token('keyword', 'let');
+const ConstKeyword = token('keyword', 'const');
 const And = token('operator', '&&');
 const Or = token('operator', '||');
 const DoubleEquals = token('operator', '==');

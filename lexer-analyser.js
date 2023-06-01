@@ -1,4 +1,4 @@
-const CharacterReader = require('./character-reader');
+const CharacterReader = require('./readers/character-reader');
 
 const tokenDetectors = require('./tokens');
 
