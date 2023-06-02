@@ -76,7 +76,7 @@ const AddSubTerm = rule(
 );
 
 const MulDivTerm = rule(
-    () => exactly(UnaryTerm, minOf(0, exactly(either(Multiply, Divide), UnaryTerm))),
+    () => exactly(UnaryTerm, minOf(0, exactly(either(Multiply, Divide, Module), UnaryTerm))),
     processBinaryResult
 );
 
@@ -152,5 +152,6 @@ const Subtract = token('operator', '-');
 const Multiply = token('operator', '*');
 const Divide = token('operator', '/');
 const Not = token('operator', '!');
+const Module = token('operator', '%');
 
 module.exports = LineStatement;

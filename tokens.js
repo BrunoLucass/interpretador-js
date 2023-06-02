@@ -60,7 +60,7 @@ const readString = reader => {
 }
 
 const readOperator = reader => {
-    const operatorMatch = /^(!|\+|-|\*|\/|==|!=|&&|\|\||<|>|<=|>=|=|!=|===|!==)$/;
+    const operatorMatch = /^(!|\+|-|\*|\/|==|!=|&&|\|\||<|>|<=|>=|=|!=|===|!==|%)$/;
 
     const oneCharacterOperator = reader.peek();
 

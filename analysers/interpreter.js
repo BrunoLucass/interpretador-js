@@ -105,6 +105,8 @@ const interpretBinaryOperation = (expression, vm) => {
             return leftValue !== rightValue;
         case '!=':
             return leftValue != rightValue;
+        case '%':
+            return leftValue % rightValue;
     }
 
     throw new Error(`Invalid operation requested: ${expression.operation}`);
